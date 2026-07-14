@@ -1,0 +1,22 @@
+{
+  "watch_name": "Sevilla finde 04-06 sep",
+  "destination": "Seville, Spain",
+  "checkin": "2026-09-04",
+  "checkout": "2026-09-06",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T10:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas.",
+  "accommodations": [
+    {"id": 12128, "name": "EME Catedral Mercer Hotel", "url": "https://www.booking.com/hotel/es/eme-fusion.html", "price": {"book": 408, "currency": "EUR"}, "rating": {"number_of_reviews": 1502, "review_score": 8.3, "stars": 5}, "location": {"city_name": "Sevilla", "district_name": "Santa Cruz"}},
+    {"id": 91159, "name": "Eurostars Al-Ándalus Palace", "url": "https://www.booking.com/hotel/es/alandalus.html", "price": {"book": 174.59, "currency": "EUR"}, "rating": {"number_of_reviews": 15115, "review_score": 8.4, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Bellavista - Palmera"}},
+    {"id": 8388037, "name": "Palacio del siglo XVII frente a los Jardines de Murillo", "url": "https://www.booking.com/hotel/es/palacio-jardines-de-murillo.html", "price": {"book": 226.7, "currency": "EUR"}, "rating": {"number_of_reviews": 877, "review_score": 9.0, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 6764428, "name": "MH Apartments Central Sevilla", "url": "https://www.booking.com/hotel/es/monsalves-39.html", "price": {"book": 204.28, "currency": "EUR"}, "rating": {"number_of_reviews": 927, "review_score": 8.9, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 189147, "name": "Hotel Madrid de Sevilla by SHS", "url": "https://www.booking.com/hotel/es/madrid-sevilla.html", "price": {"book": 204.52, "currency": "EUR"}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 15957007, "name": "Raíces Salvador Casa Boutique", "url": "https://www.booking.com/hotel/es/raices-salvador-casa-palacio.html", "price": {"book": 299.81, "currency": "EUR"}, "rating": {"number_of_reviews": 90, "review_score": 9.4, "stars": 3}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 8192001, "name": "Alameda Corner", "url": "https://www.booking.com/hotel/es/alameda-corner-rooms-and-apartment.html", "price": {"book": 176, "currency": "EUR"}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 439747, "name": "Singular Virgenes", "url": "https://www.booking.com/hotel/es/virgenes-singular-apartments.html", "price": {"book": 173.26, "currency": "EUR"}, "rating": {"number_of_reviews": 572, "review_score": 7.8, "stars": 3}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 90646, "name": "NH Sevilla Plaza de Armas", "url": "https://www.booking.com/hotel/es/nhplazadearmas.html", "price": {"book": 291.01, "currency": "EUR"}, "rating": {"number_of_reviews": 5226, "review_score": 8.7, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 7228333, "name": "Santa Clara Suites Sevilla", "url": "https://www.booking.com/hotel/es/yana-santa-clara-sevilla.html", "price": {"book": 246.86, "currency": "EUR"}, "rating": {"number_of_reviews": 919, "review_score": 8.3, "stars": 3}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}}
+  ]
+}

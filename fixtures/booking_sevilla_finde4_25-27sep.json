@@ -1,0 +1,22 @@
+{
+  "watch_name": "Sevilla finde 25-27 sep",
+  "destination": "Seville, Spain",
+  "checkin": "2026-09-25",
+  "checkout": "2026-09-27",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T10:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas.",
+  "accommodations": [
+    {"id": 91159, "name": "Eurostars Al-Ándalus Palace", "url": "https://www.booking.com/hotel/es/alandalus.html", "price": {"book": 300.59, "currency": "EUR"}, "rating": {"number_of_reviews": 15115, "review_score": 8.4, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Bellavista - Palmera"}},
+    {"id": 27901, "name": "Hostal Callejon del Agua", "url": "https://www.booking.com/hotel/es/hostal-callejon-del-agua.html", "price": {"book": 370, "currency": "EUR"}, "rating": {"number_of_reviews": 2640, "review_score": 8.3, "stars": 3}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 91098, "name": "Monte Carmelo", "url": "https://www.booking.com/hotel/es/montecarmelosevilla.html", "price": {"book": 440, "currency": "EUR"}, "rating": {"number_of_reviews": 2476, "review_score": 9.1, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Los Remedios"}},
+    {"id": 91745, "name": "Hotel Cervantes", "url": "https://www.booking.com/hotel/es/hotelcervantes.html", "price": {"book": 581.4, "currency": "EUR"}, "rating": {"number_of_reviews": 8104, "review_score": 8.7, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 189282, "name": "Hotel y Apartamentos Doña Lola", "url": "https://www.booking.com/hotel/es/dona-lola.html", "price": {"book": 595.65, "currency": "EUR"}, "rating": {"number_of_reviews": 1589, "review_score": 7.7, "stars": 2}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}},
+    {"id": 16163659, "name": "Hotel Ybarra Sevilla", "url": "https://www.booking.com/hotel/es/ybarra-sevilla.html", "price": {"book": 481.12, "currency": "EUR"}, "rating": {"number_of_reviews": 267, "review_score": 9.3, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Bellavista - Palmera"}},
+    {"id": 4048276, "name": "Urban House Siurot 33", "url": "https://www.booking.com/hotel/es/apartamentos-siurot-33.html", "price": {"book": 320, "currency": "EUR"}, "rating": {"number_of_reviews": 1196, "review_score": 8.8, "stars": 3}, "location": {"city_name": "Sevilla", "district_name": "Sur"}},
+    {"id": 11085958, "name": "Posada de los Venerables", "url": "https://www.booking.com/hotel/es/posada-de-los-venerables.html", "price": {"book": 470.31, "currency": "EUR"}, "location": {"city_name": "Sevilla", "district_name": "Santa Cruz"}},
+    {"id": 237114, "name": "Eurostars Sevilla Boutique", "url": "https://www.booking.com/hotel/es/eurostars-sevilla-boutique.html", "price": {"book": 700.18, "currency": "EUR"}, "rating": {"number_of_reviews": 1897, "review_score": 9.0, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Santa Cruz"}},
+    {"id": 91709, "name": "Casa Romana Hotel Boutique", "url": "https://www.booking.com/hotel/es/casaromanahotelboutique.html", "price": {"book": 513.32, "currency": "EUR"}, "rating": {"number_of_reviews": 1989, "review_score": 8.8, "stars": 4}, "location": {"city_name": "Sevilla", "district_name": "Centro histórico de Sevilla"}}
+  ]
+}

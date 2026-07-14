@@ -37,6 +37,31 @@ watchlist:
     checkin: "2026-10-10"
     checkout: "2026-10-12"
     adults: 2
+  # Sevilla, fines de semana de septiembre (viernes → domingo)
+  - name: "Sevilla finde 04-06 sep"
+    destination: "Seville, Spain"
+    city_code: "SVQ"
+    checkin: "2026-09-04"
+    checkout: "2026-09-06"
+    adults: 2
+  - name: "Sevilla finde 11-13 sep"
+    destination: "Seville, Spain"
+    city_code: "SVQ"
+    checkin: "2026-09-11"
+    checkout: "2026-09-13"
+    adults: 2
+  - name: "Sevilla finde 18-20 sep"
+    destination: "Seville, Spain"
+    city_code: "SVQ"
+    checkin: "2026-09-18"
+    checkout: "2026-09-20"
+    adults: 2
+  - name: "Sevilla finde 25-27 sep"
+    destination: "Seville, Spain"
+    city_code: "SVQ"
+    checkin: "2026-09-25"
+    checkout: "2026-09-27"
+    adults: 2
 
 # Reglas de detección de chollos.
 detection:
