@@ -1,0 +1,22 @@
+{
+  "watch_name": "París septiembre",
+  "destination": "Paris, France",
+  "checkin": "2026-09-19",
+  "checkout": "2026-09-21",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T09:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas por brevedad.",
+  "accommodations": [
+    {"id": 7947445, "name": "HOTEL DU PRINTEMPS", "url": "https://www.booking.com/hotel/fr/du-printemps-paris.html", "price": {"book": 334.12, "currency": "EUR"}, "rating": {"number_of_reviews": 3691, "review_score": 8.1, "stars": 3}, "location": {"city_name": "París", "district_name": "8º distrito", "country_code": "fr"}},
+    {"id": 11848854, "name": "Hôtel Résidence A la Buttes aux Cailles", "url": "https://www.booking.com/hotel/fr/residence-a-la-butte-aux-cailles.html", "price": {"book": 256.2, "currency": "EUR"}, "rating": {"number_of_reviews": 996, "review_score": 8.3, "stars": 2}, "location": {"city_name": "París", "district_name": "13º distrito", "country_code": "fr"}},
+    {"id": 14501453, "name": "Maison 1887", "url": "https://www.booking.com/hotel/fr/maison-1887.html", "price": {"book": 320, "currency": "EUR"}, "location": {"city_name": "París", "district_name": "14º distrito", "country_code": "fr"}},
+    {"id": 237350, "name": "Victory Hotel Galou", "url": "https://www.booking.com/hotel/fr/victory-galou.html", "price": {"book": 248, "currency": "EUR"}, "rating": {"number_of_reviews": 1017, "review_score": 7.0, "stars": 1}, "location": {"city_name": "París", "district_name": "10º distrito", "country_code": "fr"}},
+    {"id": 547974, "name": "ibis Paris Gare du Nord Château Landon 10ème", "url": "https://www.booking.com/hotel/fr/ibis-gare-du-nord-chateau-landon.html", "price": {"book": 301.7, "currency": "EUR"}, "rating": {"number_of_reviews": 5637, "review_score": 7.6, "stars": 3}, "location": {"city_name": "París", "district_name": "10º distrito", "country_code": "fr"}},
+    {"id": 250976, "name": "Altona", "url": "https://www.booking.com/hotel/fr/altona-paris.html", "price": {"book": 299, "currency": "EUR"}, "rating": {"number_of_reviews": 5266, "review_score": 7.8, "stars": 2}, "location": {"city_name": "París", "district_name": "10º distrito", "country_code": "fr"}},
+    {"id": 569257, "name": "ibis budget Paris Porte de Vincennes", "url": "https://www.booking.com/hotel/fr/ibis-budget-paris-porte-de-vincennes.html", "price": {"book": 179.17, "currency": "EUR"}, "rating": {"number_of_reviews": 7818, "review_score": 7.2, "stars": 2}, "location": {"city_name": "París", "district_name": "20º distrito", "country_code": "fr"}},
+    {"id": 221058, "name": "Hotel Apolonia Paris Montmartre", "url": "https://www.booking.com/hotel/fr/comfort-hotel-lamarck-caulaincourt.html", "price": {"book": 333.48, "currency": "EUR"}, "rating": {"number_of_reviews": 1842, "review_score": 8.4, "stars": 3}, "location": {"city_name": "París", "district_name": "18º distrito", "country_code": "fr"}},
+    {"id": 228269, "name": "Hotel Margot", "url": "https://www.booking.com/hotel/fr/hotel-la-vieille-france.html", "price": {"book": 355.12, "currency": "EUR"}, "rating": {"number_of_reviews": 2998, "review_score": 7.0, "stars": 3}, "location": {"city_name": "París", "district_name": "10º distrito", "country_code": "fr"}},
+    {"id": 231082, "name": "Elysees Niel Hotel", "url": "https://www.booking.com/hotel/fr/hotel-elysee-niel.html", "price": {"book": 330.12, "currency": "EUR"}, "rating": {"number_of_reviews": 1583, "review_score": 8.0, "stars": 3}, "location": {"city_name": "París", "district_name": "17º distrito", "country_code": "fr"}}
+  ]
+}

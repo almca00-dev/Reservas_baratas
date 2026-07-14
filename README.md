@@ -120,8 +120,20 @@ sin depender de snapshots.
 3. Repite periódicamente (p. ej. con `cron`): cada snapshot nuevo alimenta la
    detección histórica.
 
-En `fixtures/booking_barcelona_real.json` tienes un snapshot **real** de ejemplo
-(cópialo a `snapshots/` para probar el flujo con datos verdaderos).
+En `fixtures/` tienes **snapshots reales** de Booking (14-07-2026) para cuatro
+ciudades —Barcelona, Madrid, París y Roma— que coinciden con la watchlist de
+ejemplo. Para probar el flujo con datos verdaderos:
+
+```bash
+cp fixtures/*.json snapshots/
+python -m chollos scan --provider snapshot
+```
+
+> Con datos reales lo normal es ver **0 chollos**: rara vez hay un error de
+> precio activo en un instante dado, y cada escaneo va acumulando el historial
+> que necesita la detección de caídas. El valor está en **escanear
+> periódicamente**: en cuanto un hotel se desploma respecto a su precio normal
+> (histórico) o respecto a sus semejantes (comparativa), salta el aviso.
 
 ### Programar escaneos (cron)
 

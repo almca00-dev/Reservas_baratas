@@ -1,0 +1,22 @@
+{
+  "watch_name": "Madrid septiembre",
+  "destination": "Madrid, Spain",
+  "checkin": "2026-09-12",
+  "checkout": "2026-09-14",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T09:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas por brevedad.",
+  "accommodations": [
+    {"id": 279923, "name": "Hotel Mexico", "url": "https://www.booking.com/hotel/es/mexico-madrid.html", "price": {"book": 340, "currency": "EUR"}, "rating": {"number_of_reviews": 5500, "review_score": 8.2, "stars": 2}, "location": {"city_name": "Madrid", "district_name": "Centro de Madrid", "country_code": "es"}},
+    {"id": 1542424, "name": "AbraCadabra Suites", "url": "https://www.booking.com/hotel/es/abra-cadabra-suites.html", "price": {"book": 305.89, "currency": "EUR"}, "location": {"city_name": "Madrid", "district_name": "Centro de Madrid", "country_code": "es"}},
+    {"id": 93771, "name": "4C Bravo Murillo", "url": "https://www.booking.com/hotel/es/4c-bravo-murillo.html", "price": {"book": 500, "currency": "EUR"}, "rating": {"number_of_reviews": 6038, "review_score": 8.3, "stars": 2}, "location": {"city_name": "Madrid", "district_name": "Tetuán", "country_code": "es"}},
+    {"id": 1578199, "name": "Ok Hostel Madrid", "url": "https://www.booking.com/hotel/es/ok-hostel-madrid.html", "price": {"book": 228.92, "currency": "EUR"}, "location": {"city_name": "Madrid", "district_name": "Lavapiés", "country_code": "es"}},
+    {"id": 91902, "name": "Hotel Mercader", "url": "https://www.booking.com/hotel/es/nhmercader.html", "price": {"book": 282, "currency": "EUR"}, "rating": {"number_of_reviews": 716, "review_score": 8.2, "stars": 4}, "location": {"city_name": "Madrid", "district_name": "Villa de Vallecas", "country_code": "es"}},
+    {"id": 12380789, "name": "suites recién reformadas Vista Alegre", "url": "https://www.booking.com/hotel/es/suites-recien-reformadas-vista-alegre.html", "price": {"book": 500, "currency": "EUR"}, "rating": {"number_of_reviews": 567, "review_score": 8.6, "stars": 3}, "location": {"city_name": "Madrid", "district_name": "Carabanchel", "country_code": "es"}},
+    {"id": 7658627, "name": "OLBLANC Plaza de España by Batuecas", "url": "https://www.booking.com/hotel/es/hostal-batuecas.html", "price": {"book": 766.85, "currency": "EUR"}, "rating": {"number_of_reviews": 4024, "review_score": 8.7, "stars": 4}, "location": {"city_name": "Madrid", "district_name": "Moncloa - Aravaca", "country_code": "es"}},
+    {"id": 11290174, "name": "I'M Room Suites Nuevos Ministerios - Bernabeu", "url": "https://www.booking.com/hotel/es/imroom-apartments-bernabeu.html", "price": {"book": 411, "currency": "EUR"}, "rating": {"number_of_reviews": 2222, "review_score": 9.1, "stars": 4}, "location": {"city_name": "Madrid", "district_name": "Tetuán", "country_code": "es"}},
+    {"id": 678889, "name": "Hostal Suárez", "url": "https://www.booking.com/hotel/es/hostal-sua-rez.html", "price": {"book": 140, "currency": "EUR"}, "rating": {"number_of_reviews": 540, "review_score": 8.3, "stars": 1}, "location": {"city_name": "Madrid", "district_name": "Tetuán", "country_code": "es"}},
+    {"id": 506957, "name": "JC Rooms Santo Domingo", "url": "https://www.booking.com/hotel/es/jc-rooms-santo-domingo.html", "price": {"book": 562, "currency": "EUR"}, "rating": {"number_of_reviews": 4715, "review_score": 7.9, "stars": 3}, "location": {"city_name": "Madrid", "district_name": "Centro de Madrid", "country_code": "es"}}
+  ]
+}

@@ -1,0 +1,22 @@
+{
+  "watch_name": "Roma octubre",
+  "destination": "Rome, Italy",
+  "checkin": "2026-10-10",
+  "checkout": "2026-10-12",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T09:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas por brevedad.",
+  "accommodations": [
+    {"id": 10788987, "name": "Eureka Rooms", "url": "https://www.booking.com/hotel/it/eureka-rooms.html", "price": {"book": 239.65, "currency": "EUR"}, "rating": {"number_of_reviews": 1022, "review_score": 7.9, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Esquilino", "country_code": "it"}},
+    {"id": 9826164, "name": "Lungotevere Testaccio 6 Roma - Apartments", "url": "https://www.booking.com/hotel/it/gargano-roma2.html", "price": {"book": 264, "currency": "EUR"}, "rating": {"number_of_reviews": 572, "review_score": 8.7, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Aventino", "country_code": "it"}},
+    {"id": 4195471, "name": "Filomena Arthouse", "url": "https://www.booking.com/hotel/it/filomena-arthouse.html", "price": {"book": 304, "currency": "EUR"}, "rating": {"number_of_reviews": 774, "review_score": 8.0, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Esquilino", "country_code": "it"}},
+    {"id": 10972709, "name": "LE TRIPLETTE", "url": "https://www.booking.com/hotel/it/le-triplette.html", "price": {"book": 271.92, "currency": "EUR"}, "rating": {"number_of_reviews": 137, "review_score": 8.6, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Gianicolense", "country_code": "it"}},
+    {"id": 1004922, "name": "Casa Piccole Ancelle di Cristo Re", "url": "https://www.booking.com/hotel/it/casa-piccole-ancelle-roma.html", "price": {"book": 204, "currency": "EUR"}, "location": {"city_name": "Roma", "district_name": "Aurelio", "country_code": "it"}},
+    {"id": 254335, "name": "Hotel Croce Di Malta", "url": "https://www.booking.com/hotel/it/croce-di-malta-roma.html", "price": {"book": 308, "currency": "EUR"}, "rating": {"number_of_reviews": 2329, "review_score": 8.1, "stars": 2}, "location": {"city_name": "Roma", "district_name": "Centro de Roma", "country_code": "it"}},
+    {"id": 368703, "name": "B&B Roma Appia Davila25", "url": "https://www.booking.com/hotel/it/b-roma33.html", "price": {"book": 194, "currency": "EUR"}, "rating": {"number_of_reviews": 203, "review_score": 9.1, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Appio Latino", "country_code": "it"}},
+    {"id": 8004386, "name": "Casa Cecilia", "url": "https://www.booking.com/hotel/it/cecilia-roma.html", "price": {"book": 328.2, "currency": "EUR"}, "rating": {"number_of_reviews": 537, "review_score": 9.2, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Esquilino", "country_code": "it"}},
+    {"id": 2137657, "name": "1A Grace House", "url": "https://www.booking.com/hotel/it/grace-house.html", "price": {"book": 324, "currency": "EUR"}, "rating": {"number_of_reviews": 347, "review_score": 8.7, "stars": 4}, "location": {"city_name": "Roma", "district_name": "Rione Monti", "country_code": "it"}},
+    {"id": 1397855, "name": "Rome Inn Vatican View Rooms", "url": "https://www.booking.com/hotel/it/rome-inn-vatican-view-rooms.html", "price": {"book": 218.4, "currency": "EUR"}, "rating": {"number_of_reviews": 234, "review_score": 8.1, "stars": 3}, "location": {"city_name": "Roma", "district_name": "Trionfale", "country_code": "it"}}
+  ]
+}

@@ -19,7 +19,19 @@ watchlist:
     checkin: "2026-09-05"
     checkout: "2026-09-07"
     adults: 2
-  - name: "Roma escapada"
+  - name: "Madrid septiembre"
+    destination: "Madrid, Spain"
+    city_code: "MAD"
+    checkin: "2026-09-12"
+    checkout: "2026-09-14"
+    adults: 2
+  - name: "París septiembre"
+    destination: "Paris, France"
+    city_code: "PAR"
+    checkin: "2026-09-19"
+    checkout: "2026-09-21"
+    adults: 2
+  - name: "Roma octubre"
     destination: "Rome, Italy"
     city_code: "ROM"
     checkin: "2026-10-10"
