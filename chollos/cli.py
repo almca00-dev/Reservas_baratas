@@ -17,6 +17,7 @@ import sys
 from .config import Config, load_config
 from .engine import Engine
 from .notifier.cli import render_chollos, render_report
+from .providers.amadeus import AmadeusProvider
 from .providers.base import PriceProvider
 from .providers.demo import DemoProvider
 from .providers.snapshot import SnapshotProvider
@@ -31,7 +32,16 @@ def _build_provider(name: str, config: Config) -> PriceProvider:
         return DemoProvider()
     if name == "snapshot":
         return SnapshotProvider(config.snapshots_dir)
-    raise SystemExit(f"Proveedor desconocido: {name} (usa 'snapshot' o 'demo')")
+    if name == "amadeus":
+        am = config.amadeus
+        return AmadeusProvider(
+            api_key=am.api_key,
+            api_secret=am.api_secret,
+            hostname=am.hostname,
+            max_hotels=am.max_hotels,
+            currency=config.currency,
+        )
+    raise SystemExit(f"Proveedor desconocido: {name} (usa 'snapshot', 'demo' o 'amadeus')")
 
 
 def cmd_init(args: argparse.Namespace) -> int:
@@ -55,7 +65,11 @@ def cmd_init(args: argparse.Namespace) -> int:
 
 def cmd_scan(args: argparse.Namespace) -> int:
     cfg = load_config(args.config)
-    provider = _build_provider(args.provider, cfg)
+    try:
+        provider = _build_provider(args.provider, cfg)
+    except Exception as exc:  # noqa: BLE001 - error de configuración del proveedor
+        print(f"No se pudo iniciar el proveedor '{args.provider}': {exc}", file=sys.stderr)
+        return 2
     with Storage(cfg.db_path) as storage:
         engine = Engine(cfg, provider, storage)
         result = engine.scan()
@@ -94,7 +108,8 @@ def build_parser() -> argparse.ArgumentParser:
     p_init.set_defaults(func=cmd_init)
 
     p_scan = sub.add_parser("scan", help="Obtiene precios, detecta chollos y avisa.")
-    p_scan.add_argument("--provider", default="snapshot", choices=["snapshot", "demo"],
+    p_scan.add_argument("--provider", default="snapshot",
+                        choices=["snapshot", "demo", "amadeus"],
                         help="Fuente de datos (por defecto: snapshot).")
     p_scan.add_argument("--email-all", action="store_true",
                         help="Envía por email todos los chollos, no solo los nuevos.")

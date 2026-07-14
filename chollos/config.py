@@ -44,6 +44,22 @@ class EmailConfig:
 
 
 @dataclass
+class AmadeusConfig:
+    api_key_env: str = "AMADEUS_API_KEY"
+    api_secret_env: str = "AMADEUS_API_SECRET"
+    hostname: str = "test"  # "test" (gratis, datos limitados) | "production"
+    max_hotels: int = 40
+
+    @property
+    def api_key(self) -> str:
+        return os.environ.get(self.api_key_env, "")
+
+    @property
+    def api_secret(self) -> str:
+        return os.environ.get(self.api_secret_env, "")
+
+
+@dataclass
 class Config:
     currency: str = "EUR"
     user_country_code: str = "es"
@@ -53,6 +69,7 @@ class Config:
     watchlist: list[WatchItem] = field(default_factory=list)
     detection: DetectionConfig = field(default_factory=DetectionConfig)
     email: EmailConfig = field(default_factory=EmailConfig)
+    amadeus: AmadeusConfig = field(default_factory=AmadeusConfig)
 
 
 def _watch_from_dict(d: dict[str, Any], default_currency: str) -> WatchItem:
@@ -61,6 +78,7 @@ def _watch_from_dict(d: dict[str, Any], default_currency: str) -> WatchItem:
         checkin=d["checkin"],
         checkout=d["checkout"],
         destination=d.get("destination"),
+        city_code=d.get("city_code"),
         hotel_names=d.get("hotel_names"),
         adults=int(d.get("adults", 2)),
         rooms=int(d.get("rooms", 1)),
@@ -103,6 +121,14 @@ def load_config(path: str) -> Config:
         password_env=em.get("password_env", "CHOLLOS_EMAIL_PASSWORD"),
         sender=em.get("sender", em.get("username", "")),
         to=list(em.get("to", []) or []),
+    )
+
+    am = (raw.get("sources", {}) or {}).get("amadeus", {}) or {}
+    cfg.amadeus = AmadeusConfig(
+        api_key_env=am.get("api_key_env", "AMADEUS_API_KEY"),
+        api_secret_env=am.get("api_secret_env", "AMADEUS_API_SECRET"),
+        hostname=am.get("hostname", "test"),
+        max_hotels=int(am.get("max_hotels", 40)),
     )
 
     return cfg

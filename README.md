@@ -56,9 +56,36 @@ una capa de **proveedores** intercambiable (`chollos/providers/`):
 
 | Proveedor        | Estado | Uso |
 |------------------|--------|-----|
-| `SnapshotProvider` | ✅ activo | Lee snapshots JSON con el formato de Booking desde `snapshots/`. Ruta real hoy. |
+| `AmadeusProvider`  | ✅ activo | **API real de hoteles** (Amadeus Self-Service). Funciona sola, sin snapshots. Requiere clave gratuita. |
+| `SnapshotProvider` | ✅ activo | Lee snapshots JSON con el formato de Booking desde `snapshots/`. |
 | `DemoProvider`     | ✅ activo | Datos sintéticos con un error inyectado, para probar/demostrar. |
-| `BookingApiProvider` | 🔌 hueco | Para una API real (Demand API de Booking o RapidAPI) con clave. |
+| `BookingApiProvider` | 🔌 hueco | Para la Demand API de Booking o un proveedor RapidAPI. |
+
+### Amadeus (recomendado, API real)
+
+Fuente de datos real que permite que la herramienta funcione sola (con `cron`),
+sin depender de snapshots.
+
+1. Alta gratuita en <https://developers.amadeus.com>.
+2. Crea una app en *My Self-Service Workspace* y copia **API Key** y **API Secret**.
+3. Guárdalas en variables de entorno (nunca en el YAML):
+   ```bash
+   export AMADEUS_API_KEY="tu_api_key"
+   export AMADEUS_API_SECRET="tu_api_secret"
+   ```
+4. En `config.yaml`, cada búsqueda debería llevar su `city_code` (código IATA de
+   ciudad, p. ej. `BCN`, `ROM`, `PAR`); si falta, se intenta resolver desde
+   `destination`. Ajusta `sources.amadeus` (entorno `test`/`production` y
+   `max_hotels`).
+5. Ejecuta:
+   ```bash
+   python -m chollos scan --provider amadeus
+   ```
+
+> **test vs production.** El entorno `test` es gratis pero con datos limitados y
+> cacheados (ideal para montar y probar). Para precios reales en vivo hay que
+> pasar la app a `production` en el panel de Amadeus (sigue teniendo cuota
+> gratuita mensual) y poner `hostname: production`.
 
 ### Flujo con snapshots (recomendado hoy)
 
@@ -77,8 +104,8 @@ En `fixtures/booking_barcelona_real.json` tienes un snapshot **real** de ejemplo
 ### Programar escaneos (cron)
 
 ```cron
-# Cada 3 horas
-0 */3 * * * cd /ruta/Reservas_baratas && /usr/bin/python3 -m chollos scan >> data/scan.log 2>&1
+# Cada 3 horas (con Amadeus; exporta antes AMADEUS_API_KEY y AMADEUS_API_SECRET)
+0 */3 * * * cd /ruta/Reservas_baratas && /usr/bin/python3 -m chollos scan --provider amadeus >> data/scan.log 2>&1
 ```
 
 ## Avisos por email (Gmail)
@@ -107,9 +134,11 @@ del mismo precio). Usa `--email-all` para enviar todos.
 
 ## Vuelos
 
-Fuera del alcance de esta primera versión (el conector de Booking no cubre
-vuelos). La arquitectura ya está preparada: implementa un proveedor que cumpla
-la interfaz `PriceProvider` y el resto del sistema funciona igual. Ver
+Aún no implementado, pero **la misma cuenta de Amadeus incluye la API de
+vuelos** (Flight Offers Search), así que el siguiente paso natural es un
+`FlightsProvider` que reutilice las credenciales ya configuradas. La
+arquitectura está preparada: basta un proveedor que cumpla `PriceProvider` y el
+resto del sistema (almacenamiento, detección, avisos) funciona igual. Ver
 `flights/README.md`.
 
 ## Estructura

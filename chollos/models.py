@@ -23,6 +23,9 @@ class WatchItem:
     checkin: str
     checkout: str
     destination: Optional[str] = None
+    # Código IATA de ciudad (p. ej. BCN, ROM). Lo usa Amadeus; si falta, se
+    # intenta resolver a partir de `destination`.
+    city_code: Optional[str] = None
     hotel_names: Optional[list[str]] = None
     adults: int = 2
     rooms: int = 1

@@ -15,11 +15,13 @@ storage:
 watchlist:
   - name: "Barcelona verano"
     destination: "Barcelona, Spain"
+    city_code: "BCN"   # código IATA de ciudad (lo usa Amadeus). Si falta, se intenta resolver desde destination.
     checkin: "2026-09-05"
     checkout: "2026-09-07"
     adults: 2
   - name: "Roma escapada"
     destination: "Rome, Italy"
+    city_code: "ROM"
     checkin: "2026-10-10"
     checkout: "2026-10-12"
     adults: 2
@@ -46,6 +48,19 @@ detection:
 
   # Ignora precios por debajo de esto (probable dato corrupto, no chollo real).
   floor_price_per_night: 1.0
+
+# Fuentes de datos con API. Amadeus da hoteles (y vuelos en el futuro).
+# Alta gratis en https://developers.amadeus.com → crea una app y copia
+# API Key y API Secret en variables de entorno (nunca aquí):
+#   export AMADEUS_API_KEY="..."
+#   export AMADEUS_API_SECRET="..."
+# Uso: python -m chollos scan --provider amadeus
+sources:
+  amadeus:
+    api_key_env: AMADEUS_API_KEY
+    api_secret_env: AMADEUS_API_SECRET
+    hostname: test        # "test" (gratis, datos limitados) | "production"
+    max_hotels: 40        # nº de hoteles por ciudad a consultar en cada escaneo
 
 # Avisos por email (opcional). Para Gmail usa una "contraseña de aplicación"
 # y guárdala en la variable de entorno indicada en password_env.
