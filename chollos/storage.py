@@ -146,3 +146,21 @@ class Storage:
             "SELECT * FROM chollos ORDER BY id DESC LIMIT ?", (limit,)
         )
         return cur.fetchall()
+
+    def top_chollos(self, limit: int = 50) -> list[sqlite3.Row]:
+        """Chollos ordenados por mayor descuento (score)."""
+        cur = self.conn.execute(
+            "SELECT * FROM chollos ORDER BY score DESC, id DESC LIMIT ?", (limit,)
+        )
+        return cur.fetchall()
+
+    def stats(self) -> dict:
+        q = self.conn.execute("SELECT COUNT(*) c, MAX(observed_at) m FROM quotes").fetchone()
+        c = self.conn.execute("SELECT COUNT(*) c FROM chollos").fetchone()
+        w = self.conn.execute("SELECT COUNT(DISTINCT watch_name) c FROM quotes").fetchone()
+        return {
+            "quotes": q["c"] or 0,
+            "chollos": c["c"] or 0,
+            "watches": w["c"] or 0,
+            "last_observation": q["m"],
+        }

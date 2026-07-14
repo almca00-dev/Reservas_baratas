@@ -43,7 +43,18 @@ python -m chollos scan
 
 # Ver los últimos chollos guardados
 python -m chollos report
+
+# Panel web (navegador) con los chollos ordenados por descuento
+python -m chollos web            # http://127.0.0.1:8000
 ```
+
+## Panel web
+
+`python -m chollos web` levanta un panel ligero (librería estándar, sin
+dependencias) en `http://127.0.0.1:8000` que muestra los chollos ordenados por
+descuento, con enlaces al hotel y modo claro/oscuro. Opciones: `--port`, `--host`.
+También expone `GET /api/chollos` con los datos en JSON para integrarlos en otra
+app.
 
 Edita `config.yaml` para definir tu **watchlist** (destinos, fechas, ocupación)
 y las reglas de detección.
@@ -162,6 +173,7 @@ chollos/
   detector.py          # estrategias de detección
   engine.py            # orquestación fetch → store → detect → notify
   cli.py               # interfaz de línea de comandos
+  web.py               # panel web (http.server) + API JSON
   providers/           # fuentes de datos (snapshot, demo, booking_api)
   notifier/            # avisos (consola, email)
 fixtures/              # snapshot real de ejemplo

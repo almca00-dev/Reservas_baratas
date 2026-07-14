@@ -159,6 +159,13 @@ def cmd_check_amadeus(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_web(args: argparse.Namespace) -> int:
+    from .web import serve
+    cfg = load_config(args.config)
+    serve(cfg.db_path, host=args.host, port=args.port)
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="chollos", description="Buscador de chollos (errores de precio) en hoteles.")
     p.add_argument("--config", default=DEFAULT_CONFIG, help="Ruta al fichero de configuración YAML.")
@@ -179,6 +186,11 @@ def build_parser() -> argparse.ArgumentParser:
     p_report = sub.add_parser("report", help="Muestra los últimos chollos guardados.")
     p_report.add_argument("--limit", type=int, default=50)
     p_report.set_defaults(func=cmd_report)
+
+    p_web = sub.add_parser("web", help="Lanza el panel web para ver los chollos.")
+    p_web.add_argument("--host", default="127.0.0.1")
+    p_web.add_argument("--port", type=int, default=8000)
+    p_web.set_defaults(func=cmd_web)
 
     p_check = sub.add_parser("check-amadeus",
                              help="Verifica credenciales y acceso a hoteles en Amadeus.")
