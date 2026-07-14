@@ -77,10 +77,21 @@ sin depender de snapshots.
    ciudad, p. ej. `BCN`, `ROM`, `PAR`); si falta, se intenta resolver desde
    `destination`. Ajusta `sources.amadeus` (entorno `test`/`production` y
    `max_hotels`).
-5. Ejecuta:
+5. Comprueba que la cuenta tiene acceso a hoteles:
+   ```bash
+   python -m chollos check-amadeus            # o --city PAR, MAD, ROM...
+   ```
+   Verifica credenciales (token), la API **Hotel List** y la API **Hotel Search**.
+6. Ejecuta:
    ```bash
    python -m chollos scan --provider amadeus
    ```
+
+> **¿"Solo veo vuelos" en la web de Amadeus?** Es normal: una sola API Key da
+> acceso a **todo** el catálogo Self-Service en `test` (no se activa producto a
+> producto). Los hoteles están en *Self-Service APIs → categoría Hotels*
+> (**Hotel Search** y **Hotel List**). La forma definitiva de confirmarlo es
+> `python -m chollos check-amadeus`.
 
 > **test vs production.** El entorno `test` es gratis pero con datos limitados y
 > cacheados (ideal para montar y probar). Para precios reales en vivo hay que

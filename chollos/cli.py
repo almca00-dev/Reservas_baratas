@@ -98,6 +98,67 @@ def cmd_report(args: argparse.Namespace) -> int:
     return 0
 
 
+def cmd_check_amadeus(args: argparse.Namespace) -> int:
+    """Comprueba que las credenciales de Amadeus conectan y hay acceso a hoteles."""
+    from .providers.amadeus import AmadeusError
+
+    cfg = load_config(args.config)
+    city = args.city
+    try:
+        provider = AmadeusProvider(
+            api_key=cfg.amadeus.api_key,
+            api_secret=cfg.amadeus.api_secret,
+            hostname=cfg.amadeus.hostname,
+            max_hotels=cfg.amadeus.max_hotels,
+            currency=cfg.currency,
+        )
+    except AmadeusError as exc:
+        print(f"❌ {exc}")
+        return 2
+
+    print(f"Entorno: {cfg.amadeus.hostname}  ·  ciudad de prueba: {city}\n")
+
+    # 1) Token (valida las credenciales)
+    try:
+        provider._get_token()
+        print("✅ Credenciales válidas: token obtenido correctamente.")
+    except AmadeusError as exc:
+        print(f"❌ Credenciales rechazadas: {exc}")
+        print("   Revisa API Key / API Secret y que el entorno (test/production) "
+              "coincida con el tipo de claves.")
+        return 2
+
+    # 2) Acceso a HOTELES (Hotel List)
+    try:
+        hotels = provider.hotel_list(city)
+    except AmadeusError as exc:
+        print(f"❌ Sin acceso a la API de hoteles (Hotel List): {exc}")
+        print("   Tu cuenta obtuvo token, pero el catálogo de hoteles no responde.")
+        return 3
+    print(f"✅ API de hoteles disponible: {len(hotels)} hoteles en {city}.")
+
+    if not hotels:
+        print("⚠️  No devolvió hoteles para esa ciudad (prueba otra con --city, p. ej. PAR).")
+        return 0
+
+    # 3) Precios reales (Hotel Search) para una muestra
+    from .models import WatchItem
+    sample_ids = [h["hotelId"] for h in hotels if h.get("hotelId")][:5]
+    watch = WatchItem(name="check", checkin=args.checkin, checkout=args.checkout,
+                      city_code=city, currency=cfg.currency)
+    try:
+        offers = provider.hotel_offers(sample_ids, watch)
+    except AmadeusError as exc:
+        print(f"⚠️  Hotel List funciona, pero Hotel Search falló: {exc}")
+        return 0
+    with_price = [o for o in offers if (o.get("offers"))]
+    print(f"✅ Precios (Hotel Search): {len(with_price)} hoteles con oferta "
+          f"para {args.checkin} → {args.checkout}.")
+    print("\n🎉 Tu cuenta tiene acceso a hoteles. Ya puedes usar: "
+          "python -m chollos scan --provider amadeus")
+    return 0
+
+
 def build_parser() -> argparse.ArgumentParser:
     p = argparse.ArgumentParser(prog="chollos", description="Buscador de chollos (errores de precio) en hoteles.")
     p.add_argument("--config", default=DEFAULT_CONFIG, help="Ruta al fichero de configuración YAML.")
@@ -118,6 +179,13 @@ def build_parser() -> argparse.ArgumentParser:
     p_report = sub.add_parser("report", help="Muestra los últimos chollos guardados.")
     p_report.add_argument("--limit", type=int, default=50)
     p_report.set_defaults(func=cmd_report)
+
+    p_check = sub.add_parser("check-amadeus",
+                             help="Verifica credenciales y acceso a hoteles en Amadeus.")
+    p_check.add_argument("--city", default="BCN", help="Código IATA de ciudad para la prueba.")
+    p_check.add_argument("--checkin", default="2026-09-05")
+    p_check.add_argument("--checkout", default="2026-09-07")
+    p_check.set_defaults(func=cmd_check_amadeus)
 
     return p
 
