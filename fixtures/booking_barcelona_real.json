@@ -1,0 +1,22 @@
+{
+  "watch_name": "Barcelona verano",
+  "destination": "Barcelona, Spain",
+  "checkin": "2026-09-05",
+  "checkout": "2026-09-07",
+  "adults": 2,
+  "currency": "EUR",
+  "observed_at": "2026-07-14T09:00:00",
+  "_nota": "Snapshot REAL del conector de Booking.com (14-07-2026). Facilities recortadas por brevedad; no afectan a la detección.",
+  "accommodations": [
+    {"id": 1896903, "name": "ibis Styles Barcelona City Bogatell", "url": "https://www.booking.com/hotel/es/ibis-styles-barcelona-city-bogatell.html", "price": {"book": 474.5, "currency": "EUR"}, "rating": {"number_of_reviews": 4692, "review_score": 8.5, "stars": 2}, "location": {"city_name": "Barcelona", "district_name": "Sant Martí", "country_code": "es"}},
+    {"id": 236555, "name": "Hostal Nitzs Bcn", "url": "https://www.booking.com/hotel/es/hostal-nitzs-bcn.html", "price": {"book": 277.8, "currency": "EUR"}, "rating": {"number_of_reviews": 1258, "review_score": 7.6, "stars": 1}, "location": {"city_name": "Barcelona", "district_name": "Barrio Gótico", "country_code": "es"}},
+    {"id": 555725, "name": "Wow Hostel Barcelona", "url": "https://www.booking.com/hotel/es/wow-hostel-barcelona-barcelona1.html", "price": {"book": 249.84, "currency": "EUR"}, "location": {"city_name": "Barcelona", "district_name": "Sarrià-Sant Gervasi", "country_code": "es"}},
+    {"id": 2063823, "name": "The One Barcelona GL", "url": "https://www.booking.com/hotel/es/the-one-barcelona.html", "price": {"book": 1178.1, "currency": "EUR"}, "rating": {"number_of_reviews": 935, "review_score": 9.1, "stars": 5}, "location": {"city_name": "Barcelona", "district_name": "Eixample", "country_code": "es"}},
+    {"id": 251529, "name": "Hostal Barcelona", "url": "https://www.booking.com/hotel/es/hostal-barcelona.html", "price": {"book": 291.8, "currency": "EUR"}, "rating": {"number_of_reviews": 3428, "review_score": 7.4, "stars": 2}, "location": {"city_name": "Barcelona", "district_name": "Sants-Montjuïc", "country_code": "es"}},
+    {"id": 49226, "name": "W Barcelona", "url": "https://www.booking.com/hotel/es/w-barcelona.html", "price": {"book": 1018.05, "currency": "EUR"}, "rating": {"number_of_reviews": 3529, "review_score": 8.4, "stars": 5}, "location": {"city_name": "Barcelona", "district_name": "Barceloneta", "country_code": "es"}},
+    {"id": 189062, "name": "Bailén Green House", "url": "https://www.booking.com/hotel/es/casa-dover.html", "price": {"book": 356.3, "currency": "EUR"}, "rating": {"number_of_reviews": 622, "review_score": 8.0, "stars": 4}, "location": {"city_name": "Barcelona", "district_name": "Gracia", "country_code": "es"}},
+    {"id": 275070, "name": "Fontanella Green House", "url": "https://www.booking.com/hotel/es/fontanella-barcelona.html", "price": {"book": 385.7, "currency": "EUR"}, "rating": {"number_of_reviews": 1751, "review_score": 7.7, "stars": 2}, "location": {"city_name": "Barcelona", "district_name": "Barrio Gótico", "country_code": "es"}},
+    {"id": 90161, "name": "Arc La Rambla", "url": "https://www.booking.com/hotel/es/larc.html", "price": {"book": 714.8, "currency": "EUR"}, "rating": {"number_of_reviews": 2239, "review_score": 8.3, "stars": 3}, "location": {"city_name": "Barcelona", "district_name": "Raval", "country_code": "es"}},
+    {"id": 10945977, "name": "Tembo Barcelona", "url": "https://www.booking.com/hotel/es/tembo-barcelona.html", "price": {"book": 577.42, "currency": "EUR"}, "rating": {"number_of_reviews": 6541, "review_score": 8.9, "stars": 4}, "location": {"city_name": "Barcelona", "district_name": "Poblenou", "country_code": "es"}}
+  ]
+}

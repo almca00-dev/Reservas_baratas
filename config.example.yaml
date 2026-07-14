@@ -1,0 +1,61 @@
+# Configuración del buscador de chollos.
+# Copia este fichero a config.yaml (o ejecuta `python -m chollos init`).
+
+currency: EUR
+user_country_code: es
+user_locale: es
+
+storage:
+  db_path: data/chollos.db
+  snapshots_dir: snapshots
+
+# Búsquedas que se vigilan en cada escaneo.
+# Cada una es un destino/fechas/ocupación. Da igual el destino: el objetivo es
+# comparar precios y cazar errores.
+watchlist:
+  - name: "Barcelona verano"
+    destination: "Barcelona, Spain"
+    checkin: "2026-09-05"
+    checkout: "2026-09-07"
+    adults: 2
+  - name: "Roma escapada"
+    destination: "Rome, Italy"
+    checkin: "2026-10-10"
+    checkout: "2026-10-12"
+    adults: 2
+
+# Reglas de detección de chollos.
+detection:
+  # Caída respecto al PROPIO precio normal del hotel (estrategia histórica).
+  # 0.5 = avisa si está al menos un 50% por debajo de su mediana histórica.
+  historical_drop_pct: 0.5
+
+  # Precio como fracción de la mediana de hoteles COMPARABLES de la misma
+  # categoría en esa búsqueda (estrategia comparativa, funciona sin historial).
+  # 0.5 = avisa si cuesta la mitad o menos que sus semejantes.
+  peer_discount_pct: 0.5
+
+  # Nº mínimo de observaciones para fiarse del baseline histórico.
+  min_history_points: 3
+  # Nº mínimo de hoteles comparables para la estrategia comparativa.
+  min_peers: 4
+
+  # Techo absoluto opcional (€/noche): cualquier precio por debajo avisa siempre.
+  # Déjalo en null para desactivarlo.
+  absolute_max_price_per_night: null
+
+  # Ignora precios por debajo de esto (probable dato corrupto, no chollo real).
+  floor_price_per_night: 1.0
+
+# Avisos por email (opcional). Para Gmail usa una "contraseña de aplicación"
+# y guárdala en la variable de entorno indicada en password_env.
+notifications:
+  email:
+    enabled: false
+    smtp_host: smtp.gmail.com
+    smtp_port: 587
+    username: "tucorreo@gmail.com"
+    sender: "tucorreo@gmail.com"
+    password_env: CHOLLOS_EMAIL_PASSWORD
+    to:
+      - "tucorreo@gmail.com"

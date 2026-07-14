@@ -1,0 +1,20 @@
+# Datos y secretos
+data/*.db
+data/*.sqlite
+snapshots/*.json
+config.yaml
+.env
+
+# Python
+__pycache__/
+*.py[cod]
+*.egg-info/
+.venv/
+venv/
+.pytest_cache/
+.mypy_cache/
+
+# SO / editor
+.DS_Store
+.idea/
+.vscode/
